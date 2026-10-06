@@ -20,8 +20,21 @@
 // ============================================================
 
 function soloDisponibles(menu) {
-  // Tu código aquí
+
+  const platillos_disponibles = [];
+
+  for (let i = 0; i < menu.length; i++) {
+
+    if (menu[i].disponible === true) {
+      platillos_disponibles.push(menu[i]);
+    }
+
+  }
+
+  return platillos_disponibles;
 }
 
+// No borres esta línea
+module.exports = { soloDisponibles };
 // No borres esta línea: es la puerta por donde el test usa tu función
 module.exports = { soloDisponibles };

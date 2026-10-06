@@ -18,8 +18,16 @@
 // ============================================================
 
 function calcularCuenta(pedido) {
-  // Tu código aquí
-}
+  const iva = 0.19;
+  let subtotal = 0;
 
+  for (let i = 0; i < pedido.length; i++) {
+    subtotal = subtotal + pedido[i].precio;
+  }
+
+  const valorIva = subtotal * iva;
+
+  return Math.round(subtotal + valorIva);
+}
 // No borres esta línea: es la puerta por donde el test usa tu función
 module.exports = { calcularCuenta };

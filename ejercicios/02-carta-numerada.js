@@ -18,8 +18,18 @@
 // ============================================================
 
 function cartaNumerada(menu) {
-  // Tu código aquí
+
+  const resultado = [];
+
+  for (let i = 0; i < menu.length; i++) {
+    resultado.push(`${i}. ${menu[i].nombre} · $${menu[i].precio}`);
+  }
+
+  return resultado;
 }
+
+// No borres esta línea
+module.exports = { cartaNumerada };
 
 // No borres esta línea: es la puerta por donde el test usa tu función
 module.exports = { cartaNumerada };
