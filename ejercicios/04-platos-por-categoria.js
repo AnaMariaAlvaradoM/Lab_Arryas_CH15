@@ -21,6 +21,16 @@
 
 function platosPorCategoria(menu, categoria) {
   // Tu código aquí
+  const platosCategoria = [];
+
+  for (let posicion = 0; posicion < menu.length; posicion++) {
+    const plato = menu[posicion];
+
+    if (plato.categoria === categoria) {
+      platosCategoria.push(plato);
+    }
+  }
+  return platosCategoria;
 }
 
 // No borres esta línea: es la puerta por donde el test usa tu función
