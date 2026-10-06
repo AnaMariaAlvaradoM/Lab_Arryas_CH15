@@ -20,7 +20,21 @@
 // ============================================================
 
 function soloDisponibles(menu) {
-  // Tu código aquí
+  const platosDisponibles = [];
+
+
+  for (let i = 0; i < menu.length; i++) {
+    const plato = menu[i];
+
+
+    if (plato.disponible === true) {
+    
+      platosDisponibles.push(plato);
+    }
+  }
+
+
+  return platosDisponibles;
 }
 
 // No borres esta línea: es la puerta por donde el test usa tu función
