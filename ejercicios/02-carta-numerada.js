@@ -17,9 +17,19 @@
 // Pista: arreglo vacío → for → push de un texto → return al final.
 // ============================================================
 
+const { describirPlato } = require("./01-acceso-a-un-plato");
+
 function cartaNumerada(menu) {
   // Tu código aquí
+  const CARTA = []
+  for(let i = 0 ; i < menu.length; i++){
+    CARTA.push(`${i}. ${describirPlato(menu, i)}`)
+  }
+  return CARTA;
 }
+
+
+
 
 // No borres esta línea: es la puerta por donde el test usa tu función
 module.exports = { cartaNumerada };
