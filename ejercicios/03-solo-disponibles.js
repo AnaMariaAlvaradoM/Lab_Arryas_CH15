@@ -20,8 +20,21 @@
 // ============================================================
 
 function soloDisponibles(menu) {
-  // Tu código aquí
+  let platoDisponible = [];
+  if (menu.length == 0){
+        return platoDisponible;
+      }
+  for (let i = 0; i < menu.length; i++) {
+      if(menu[i].disponible == false){
+        continue;
+      } else{
+        platoDisponible.push(menu[i]);
+      }
+    
+  }
+  return platoDisponible;
 }
+
 
 // No borres esta línea: es la puerta por donde el test usa tu función
 module.exports = { soloDisponibles };
