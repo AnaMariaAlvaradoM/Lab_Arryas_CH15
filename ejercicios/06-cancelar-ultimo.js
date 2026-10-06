@@ -16,10 +16,24 @@
 //
 // Pista: pop DEVUELVE el elemento que quitó; guárdalo en una variable.
 // ============================================================
+const carta = [
+  { nombre: "Bandeja paisa", precio: 32000, categoria: "fuerte", disponible: true },
+  { nombre: "Ajiaco", precio: 28000, categoria: "fuerte", disponible: false },
+  { nombre: "Limonada de coco", precio: 9000, categoria: "bebida", disponible: true },
+  { nombre: "Jugo de lulo", precio: 7000, categoria: "bebida", disponible: true },
+  { nombre: "Postre de natas", precio: 11000, categoria: "postre", disponible: true },
+];
 
 function cancelarUltimo(pedido) {
-  // Tu código aquí
+  if (pedido.length === 0) {
+    return "El pedido está vacío";
+  }
+
+  const plato = pedido.pop();
+  return `Se canceló: ${plato.nombre}`;
 }
+console.log(cancelarUltimo([carta[0], carta[2]]));
+console.log(cancelarUltimo([]));
 
 // No borres esta línea: es la puerta por donde el test usa tu función
 module.exports = { cancelarUltimo };

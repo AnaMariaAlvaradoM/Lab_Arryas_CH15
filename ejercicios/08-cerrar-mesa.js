@@ -21,13 +21,35 @@
 // ============================================================
 
 // Estas líneas traen tus funciones de los ejercicios 03, 05 y 07
+const carta = [
+  { nombre: "Bandeja paisa", precio: 32000, categoria: "fuerte", disponible: true },
+  { nombre: "Ajiaco", precio: 28000, categoria: "fuerte", disponible: false },
+  { nombre: "Limonada de coco", precio: 9000, categoria: "bebida", disponible: true },
+  { nombre: "Jugo de lulo", precio: 7000, categoria: "bebida", disponible: true },
+  { nombre: "Postre de natas", precio: 11000, categoria: "postre", disponible: true },
+];
+
 const { soloDisponibles } = require("./03-solo-disponibles");
 const { agregarAlPedido } = require("./05-agregar-al-pedido");
 const { calcularCuenta } = require("./07-calcular-cuenta");
 
 function cerrarMesa(menu, numeros) {
-  // Tu código aquí
+  const carta = soloDisponibles(menu);
+  const pedido = [];
+
+  for (let i = 0; i < numeros.length; i++) {
+    agregarAlPedido(pedido, carta, numeros[i]);
+  }
+
+  return {
+    cantidadPlatos: pedido.length,
+    total: calcularCuenta(pedido),
+  };
 }
+
+console.log(cerrarMesa(carta, [0, 1]));
+console.log(cerrarMesa(carta, [0, 9]));
+console.log(cerrarMesa(carta, []));
 
 // No borres esta línea: es la puerta por donde el test usa tu función
 module.exports = { cerrarMesa };
