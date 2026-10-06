@@ -27,6 +27,19 @@ const { calcularCuenta } = require("./07-calcular-cuenta");
 
 function cerrarMesa(menu, numeros) {
   // Tu código aquí
+  const cartaDisponible = soloDisponibles(menu);
+  const pedido = [];
+
+  for (let posicion = 0; posicion < numeros.length; posicion++) {
+    const numeroPlato = numeros[posicion];
+
+    agregarAlPedido(pedido, cartaDisponible, numeroPlato);
+  }
+
+  return {
+    cantidadPlatos: pedido.length,
+    total: calcularCuenta(pedido)
+  };
 }
 
 // No borres esta línea: es la puerta por donde el test usa tu función
