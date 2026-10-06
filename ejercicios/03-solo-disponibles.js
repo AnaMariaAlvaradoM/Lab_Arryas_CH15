@@ -21,6 +21,13 @@
 
 function soloDisponibles(menu) {
   // Tu código aquí
+  const dMenu = [];
+  for (let i = 0; i < menu.length; i++) {
+    if (menu[i].disponible !== false) {
+      dMenu.push(menu[i]);
+    }
+  }
+  return dMenu;
 }
 
 // No borres esta línea: es la puerta por donde el test usa tu función
