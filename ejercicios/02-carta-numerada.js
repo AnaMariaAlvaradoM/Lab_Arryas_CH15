@@ -18,7 +18,11 @@
 // ============================================================
 
 function cartaNumerada(menu) {
-  // Tu código aquí
+  let newcarta = [];
+  for (let i = 0; i < menu.length; i++) {
+    newcarta.push(`${i}. ${menu[i].nombre} · $${menu[i].precio}`);
+  }
+  return newcarta;
 }
 
 // No borres esta línea: es la puerta por donde el test usa tu función
