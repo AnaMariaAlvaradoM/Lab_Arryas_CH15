@@ -21,7 +21,12 @@
 
 function agregarAlPedido(pedido, carta, numero) {
   // Tu código aquí
-}
+    if (carta[numero] === undefined){
+      return "Ese número no está en la carta"
+    }
+    pedido.push(carta[numero]);
+    return `Agregado: ${carta[numero].nombre}`;
+  }
 
 // No borres esta línea: es la puerta por donde el test usa tu función
 module.exports = { agregarAlPedido };
