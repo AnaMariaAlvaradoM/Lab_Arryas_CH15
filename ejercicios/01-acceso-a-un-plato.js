@@ -22,6 +22,10 @@
 
 function describirPlato(menu, posicion) {
   // Tu código aquí
+     if (menu[posicion] === undefined) {
+      return "Ese plato no existe";
+    }
+    return `${menu[posicion].nombre} · $${menu[posicion].precio}`;
 }
 
 // No borres esta línea: es la puerta por donde el test usa tu función

@@ -21,6 +21,18 @@
 
 function platosPorCategoria(menu, categoria) {
   // Tu código aquí
+
+  let menuPorCategoria = [];
+
+  for (let i = 0; i < menu.length; i++) {
+    if (menu[i].categoria === categoria) {
+      menuPorCategoria.push(menu[i]);
+
+    }
+
+  }
+
+  return menuPorCategoria;
 }
 
 // No borres esta línea: es la puerta por donde el test usa tu función

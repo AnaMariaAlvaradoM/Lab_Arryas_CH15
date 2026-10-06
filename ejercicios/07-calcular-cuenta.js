@@ -19,6 +19,15 @@
 
 function calcularCuenta(pedido) {
   // Tu código aquí
+  let subtotal = 0; 
+  const iva = 0.19;
+
+  for (let i = 0; i < pedido.length; i++) {
+    subtotal = subtotal + pedido[i].precio + (pedido[i].precio * iva);
+    
+  }
+
+  return Math.round(subtotal);
 }
 
 // No borres esta línea: es la puerta por donde el test usa tu función

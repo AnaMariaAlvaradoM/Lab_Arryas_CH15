@@ -21,6 +21,14 @@
 
 function agregarAlPedido(pedido, carta, numero) {
   // Tu código aquí
+  if (numero >= 0 && numero < carta.length) {
+
+    pedido.push(carta[numero]);
+    return `Agregado: ${pedido[0].nombre}`;
+  };
+
+  return "Ese número no está en la carta"
+
 }
 
 // No borres esta línea: es la puerta por donde el test usa tu función

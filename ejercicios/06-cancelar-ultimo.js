@@ -19,6 +19,15 @@
 
 function cancelarUltimo(pedido) {
   // Tu código aquí
+  const lengthPedido = pedido.length;
+
+  if ( lengthPedido === 0) {
+    return "El pedido está vacío";
+  }
+
+  let temp = pedido.pop(pedido[lengthPedido - 1]);
+
+  return "Se canceló: " + temp.nombre;
 }
 
 // No borres esta línea: es la puerta por donde el test usa tu función
