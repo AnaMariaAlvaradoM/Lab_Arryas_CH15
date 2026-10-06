@@ -18,7 +18,12 @@
 // ============================================================
 
 function cancelarUltimo(pedido) {
-  // Tu código aquí
+  if (pedido.length === 0) {
+    return "El pedido está vacío";
+  }
+  let platoCancelado = pedido.pop();
+  
+  return "Se canceló: " + platoCancelado.nombre;
 }
 
 // No borres esta línea: es la puerta por donde el test usa tu función
