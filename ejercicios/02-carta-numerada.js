@@ -17,9 +17,25 @@
 // Pista: arreglo vacío → for → push de un texto → return al final.
 // ============================================================
 
+
+
+
+
+
 function cartaNumerada(menu) {
-  // Tu código aquí
+  const carta = [];
+
+  for (let i = 0; i < menu.length; i++) {
+    const plato = menu[i];
+    carta.push(`${i}. ${plato.nombre} · $${plato.precio}`);
+  }
+
+  return carta;
 }
+
+
+
+
 
 // No borres esta línea: es la puerta por donde el test usa tu función
 module.exports = { cartaNumerada };
