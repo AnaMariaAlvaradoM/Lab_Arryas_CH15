@@ -20,7 +20,13 @@
 // ============================================================
 
 function agregarAlPedido(pedido, carta, numero) {
-  // Tu código aquí
+    for (let i = 0; i < carta.length; i++) {
+        if (carta[numero] === carta[i]) {
+            pedido.push(carta[i]);
+            return "Agregado: " + carta[i].nombre;
+        }
+    }
+    return "Ese número no está en la carta";
 }
 
 // No borres esta línea: es la puerta por donde el test usa tu función
