@@ -20,8 +20,12 @@
 // pregunta si es undefined, como en describirCurso de la clase.
 // ============================================================
 
-function describirPlato(menu, posicion) {
-  // Tu código aquí
+function describirPlato(menu , posicion ) {
+  const plato = menu[posicion];
+  if (plato === undefined) {
+    return "Ese plato no existe";
+  } 
+  return `${plato.nombre} · $${plato.precio}`;
 }
 
 // No borres esta línea: es la puerta por donde el test usa tu función
