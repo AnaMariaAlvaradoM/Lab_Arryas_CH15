@@ -25,9 +25,29 @@ const { soloDisponibles } = require("./03-solo-disponibles");
 const { agregarAlPedido } = require("./05-agregar-al-pedido");
 const { calcularCuenta } = require("./07-calcular-cuenta");
 
+const menu = [
+  { nombre: "Bandeja paisa", precio: 32000, categoria: "fuerte", disponible: true },
+  { nombre: "Ajiaco", precio: 28000, categoria: "fuerte", disponible: false },
+  { nombre: "Limonada de coco", precio: 9000, categoria: "bebida", disponible: true },
+  { nombre: "Jugo de lulo", precio: 7000, categoria: "bebida", disponible: true },
+  { nombre: "Postre de natas", precio: 11000, categoria: "postre", disponible: true },
+];
+
 function cerrarMesa(menu, numeros) {
-  // Tu código aquí
+  let carta = soloDisponibles(menu);
+  let pedido = [];
+  for (let posicion of numeros){
+    agregarAlPedido(pedido, carta ,posicion);
+  }
+  return {cantidadPlatos: pedido.length, total: calcularCuenta(pedido)};
 }
+
+console.log(cerrarMesa(menu, [0, 1]));
+console.log(cerrarMesa(menu, [0, 9]));
+console.log(cerrarMesa(menu, []));
+
+
+
 
 // No borres esta línea: es la puerta por donde el test usa tu función
 module.exports = { cerrarMesa };
