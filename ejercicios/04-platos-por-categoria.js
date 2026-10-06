@@ -19,9 +19,26 @@
 // el segundo parámetro y ===.
 // ============================================================
 
+const menu = [
+  { nombre: "Bandeja paisa", precio: 32000, categoria: "fuerte", disponible: true },
+  { nombre: "Ajiaco", precio: 28000, categoria: "fuerte", disponible: false },
+  { nombre: "Limonada de coco", precio: 9000, categoria: "bebida", disponible: true },
+  { nombre: "Jugo de lulo", precio: 7000, categoria: "bebida", disponible: true },
+  { nombre: "Postre de natas", precio: 11000, categoria: "postre", disponible: true },
+];
+
 function platosPorCategoria(menu, categoria) {
-  // Tu código aquí
+  let listaCategoria = [];
+  for (let i = 0; i < menu.length; i++) {
+    if (menu[i].categoria === categoria) {
+      listaCategoria.push(menu[i]);
+    }
+  }
+  return listaCategoria;
 }
+console.log(platosPorCategoria(menu, "bebida"));
+console.log(platosPorCategoria(menu, "fuerte"));
+console.log(platosPorCategoria(menu, "Bebida"));
 
 // No borres esta línea: es la puerta por donde el test usa tu función
 module.exports = { platosPorCategoria };
