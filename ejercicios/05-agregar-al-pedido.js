@@ -20,7 +20,11 @@
 // ============================================================
 
 function agregarAlPedido(pedido, carta, numero) {
-  // Tu código aquí
+  const platoPedido = carta[numero];
+  if (platoPedido === undefined) {
+    return "Ese número no está en la carta";
+  } pedido.push(platoPedido);
+  return "Agregado: " + platoPedido.nombre;
 }
 
 // No borres esta línea: es la puerta por donde el test usa tu función
