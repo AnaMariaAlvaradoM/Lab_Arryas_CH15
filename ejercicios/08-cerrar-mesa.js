@@ -26,7 +26,17 @@ const { agregarAlPedido } = require("./05-agregar-al-pedido");
 const { calcularCuenta } = require("./07-calcular-cuenta");
 
 function cerrarMesa(menu, numeros) {
-  // Tu código aquí
+  let pedido=[];
+  let total;
+  let cartaDia=soloDisponibles(menu);
+  
+  for(let numero of numeros){
+    agregarAlPedido(pedido, cartaDia, numero);
+  }
+  total= calcularCuenta(pedido);
+  return {
+  cantidadPlatos: pedido.length,
+  total};
 }
 
 // No borres esta línea: es la puerta por donde el test usa tu función

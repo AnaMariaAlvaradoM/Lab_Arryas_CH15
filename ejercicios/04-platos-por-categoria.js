@@ -20,7 +20,13 @@
 // ============================================================
 
 function platosPorCategoria(menu, categoria) {
-  // Tu código aquí
+  const nuevaCarta= [];
+  for(let i=0; i <menu.length; i++ ){
+    if(menu[i].categoria===categoria){
+      nuevaCarta.push(menu[i]); 
+    }
+  }
+  return nuevaCarta
 }
 
 // No borres esta línea: es la puerta por donde el test usa tu función
