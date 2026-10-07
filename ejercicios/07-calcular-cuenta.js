@@ -18,8 +18,20 @@
 // ============================================================
 
 function calcularCuenta(pedido) {
-  // Tu código aquí
-}
+ 
+  let cont = 0; 
+  
+  for (let i = 0; i < pedido.length; i++) {
 
+    cont = cont + pedido[i].precio; 
+  }
+  let iva = cont * 0.19;
+  
+  let total = Math.round(cont + iva); 
+
+  return total; 
+
+
+}
 // No borres esta línea: es la puerta por donde el test usa tu función
 module.exports = { calcularCuenta };

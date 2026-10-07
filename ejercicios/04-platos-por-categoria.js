@@ -20,8 +20,19 @@
 // ============================================================
 
 function platosPorCategoria(menu, categoria) {
-  // Tu código aquí
+  const menus = [];
+
+  for (let i = 0; i < menu.length; i++) {
+    const plato = menu[i];
+
+    if (plato.categoria === categoria) {
+      menus.push(plato);
+    }
+  }
+
+  return menus;
 }
+
 
 // No borres esta línea: es la puerta por donde el test usa tu función
 module.exports = { platosPorCategoria };
