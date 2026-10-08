@@ -15,12 +15,18 @@
 // Ejemplos (carta = [Bandeja paisa, Limonada de coco, Jugo de lulo, Postre de natas]):
 //   agregarAlPedido([], carta, 2) → "Agregado: Jugo de lulo"   (el pedido queda con 1 plato)
 //   agregarAlPedido([], carta, 9) → "Ese número no está en la carta"  (el pedido sigue vacío)
-//
+//   
 // Pista: valida ANTES de hacer push.
 // ============================================================
 
 function agregarAlPedido(pedido, carta, numero) {
-  // Tu código aquí
+  const plato = carta[numero];
+  if (plato === undefined) {
+    return "Ese número no está en la carta";
+  }
+
+  pedido.push(plato);
+  return "Agregado: " + plato.nombre;
 }
 
 // No borres esta línea: es la puerta por donde el test usa tu función

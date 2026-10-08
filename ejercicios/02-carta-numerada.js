@@ -18,8 +18,21 @@
 // ============================================================
 
 function cartaNumerada(menu) {
-  // Tu código aquí
+  let carta = [];
+  let plato;
+  let texto;
+  for (let i = 0; i < menu.length; i++) {
+    plato = (`${menu[i].nombre} · $${menu[i].precio}`);
+    texto = (`${i}. ${plato}`);
+    carta.push(texto)
+  }
+  return carta
 }
+
+console.log(cartaNumerada([
+  { nombre: "Bandeja paisa", precio: 32000, categoria: "fuerte", disponible: true },
+  { nombre: "Ajiaco", precio: 28000, categoria: "fuerte", disponible: false },
+]))
 
 // No borres esta línea: es la puerta por donde el test usa tu función
 module.exports = { cartaNumerada };
